@@ -31,9 +31,9 @@ def main(args, loglevel):
     imgwidth, imgheight = img.size
     logging.debug("Image width : %s" % imgwidth)
     logging.debug("Image height : %s" % imgheight)
-    area = (imgwidth/2 - imgheight/2, 0, imgwidth/2 + imgheight/2, imgheight)
+    area = (imgwidth//2 - imgheight//2, 0, imgwidth//2 + imgheight//2, imgheight)
     cropped_image = img.crop(area)
-    cropped_image.save("cropped_" + args.xdimension + "x" + args.ydimension + ".png")
+    cropped_image.save("cropped_.png")
 
 
 if __name__ == '__main__':

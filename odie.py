@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import sys, argparse, logging
 # Make it work for Python 2+3 and with Unicode
