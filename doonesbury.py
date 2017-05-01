@@ -25,9 +25,13 @@ def main(args, loglevel):
     logging.debug("Width : %s" % width)
     logging.debug("Input : %s" % height)
 
+
     f = open(args.input, 'rb')
     img = Image.open(f)
-    area = (width/2 - height/2, 0, width/2 + height/2, height)
+    imgwidth, imgheight = img.size
+    logging.debug("Image width : %s" % imgwidth)
+    logging.debug("Image height : %s" % imgheight)
+    area = (imgwidth/2 - imgheight/2, 0, imgwidth/2 + imgheight/2, imgheight)
     cropped_image = img.crop(area)
     cropped_image.save("cropped_" + args.xdimension + "x" + args.ydimension + ".png")
 
@@ -51,12 +55,12 @@ if __name__ == '__main__':
 
     parser.add_argument('-x', '--xdimension',
         default='320',
-        required=True,
+        required=False,
         help='width')
 
     parser.add_argument('-y', '--ydimension',
         default='480',
-        required=True,
+        required=False,
         help='height')
 
 
